@@ -44,7 +44,7 @@ class Controller
 
     public function logOut()
     {
-        echo Loader::load()->render('login.twig');
+        header("Location: http://holiday.local/");
     }
 
 }

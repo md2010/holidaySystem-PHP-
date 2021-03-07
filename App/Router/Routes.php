@@ -22,7 +22,7 @@ class Routes
         "/viewTeamMembersAdmin" => AdminController::class.'::viewTeamMembers',
         "/viewAdmins" => AdminController::class.'::viewAdmins',
         "/employee" => EmployeeController::class.'::employeeIndex',
-        "/makeHolidayRequest" => EmployeeController::class.'::makeHolidayRequest',
+        "/makeHolidayRequest" => EmployeeController::class.'::makeHolidayRequest'
     ]; 
 
     public $post_routes = [
@@ -33,8 +33,7 @@ class Routes
         "/delete" => AdminController::class.'::delete',
         "/editTeamLeader" => AdminController::class.'::editTeamLeader',
         "/editAdmin" => AdminController::class.'::editAdmin',
-        "/processHolidayRequest" => EmployeeController::class.'::processHolidayRequest',
-        "/update" => Controller::class.'::update',
+        "/processHolidayRequest" => EmployeeController::class.'::processHolidayRequest'       
     ];
 
     /* not supported!
