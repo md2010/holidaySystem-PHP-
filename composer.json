@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Database\\": "Database/",
+            "" : "public/"
+        }
+    },
+    "require": {
+        "twig/twig": "3.3"
+    }
+}

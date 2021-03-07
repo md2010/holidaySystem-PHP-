@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset=utf-8">
+    <title>Twig</title>
+</head>
+<body>
+
+     <form method="get">
+        <input type="submit" formaction="admin" value="Back to admin page"> <br><br>
+     </form>
+
+    {% for tl in teamLeaders %}
+        <form method="post">
+            <label> ID: </label> <br>
+            <input type="text" id="1" name="id" value = {{ tl.id }} readonly></input> <br><br>
+            <label> First Name: </label> <br>
+            <input type="text" id="2" name="firstName" value={{ tl.firstName }}></input> <br><br>
+            <label> Last Name: </label> <br>
+            <input type="text" id="3" name="lastName" value={{ tl.lastName }}></input> <br><br>
+            <label> Username: </label> <br>
+            <input type="text" id="4" name="username" value={{ tl.username }} readonly></input> <br><br>
+            <label> Password: </label> <br>
+            <input type="text" id="5" name="password" value={{ tl.password }}></input> <br><br>
+            <label> Project Manager ID: </label> <br>
+            <input type="text" id="6" name="projectManagerID" value={{ tl.projectManagerID }}></input> <br><br>
+             <label> Holiday: </label> <br>
+            <input type="text" id="7" name="days" value={{ tl.days }}></input> <br><br>
+
+            <input type="submit" formaction="editTeamLeader" value="Edit team leader"> <br><br>
+            <input type="submit" formaction="delete" value="Delete team leader"> <br><br>
+            <input type="submit" formmethod="get" formaction="viewTeamMembersAdmin" value="View team members"> <br><br>
+            <br><br>
+        </form>
+    {% endfor %}
+
+</body>
+</html>

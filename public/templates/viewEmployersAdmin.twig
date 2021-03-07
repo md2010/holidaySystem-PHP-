@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset=utf-8">
+    <title>Twig</title>
+</head>
+<body>
+
+     <form method="get">
+        <input type="submit" formaction="admin" value="Back to admin page"> <br><br>
+     </form>
+
+    {% for e in employers %}
+        <form method="post">
+            <label> ID: </label> <br>
+            <input type="text" id="1" name="id" value = {{ e.id }} readonly></input> <br><br>
+            <label> First Name: </label> <br>
+            <input type="text" id="2" name="firstName" value={{ e.firstName }}></input> <br><br>
+            <label> Last Name: </label> <br>
+            <input type="text" id="3" name="lastName" value={{ e.lastName }}></input> <br><br>
+            <label> Username: </label> <br>
+            <input type="text" id="4" name="username" value = {{ e.username }} readonly></input> <br><br>
+            <label> Password: </label> <br>
+            <input type="text" id="5" name="password" value={{ e.password }}></input> <br><br>
+            <label> Team Leader ID: </label> <br>
+            <input type="text" id="6" name="teamLeaderID" value={{ e.teamLeaderID }}></input> <br><br>
+            <label> Project Manager ID: </label> <br>
+            <input type="text" id="7" name="projectManagerID" value={{ e.projectManagerID }}></input> <br><br>
+             <label> Holiday: </label> <br>
+            <input type="text" id="8" name="days" value={{ e.days }}></input> <br><br>
+
+            <input type="submit" formaction="editEmployee" value="Edit Employee"> <br><br>
+            <input type="submit" formaction="delete" value="Delete Employee"> <br><br>
+            <br><br>
+        </form>
+    {% endfor %}
+</body>
+</html>

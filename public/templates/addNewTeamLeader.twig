@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset=utf-8">
+    <title>Twig</title>
+</head>
+<body>
+    <form method="post" action="processNewTeamLeader">
+        <label> First name: </label> <br>
+        <input type="text" id="1" name="data[]"></input> <br><br>
+        <label> Last name: </label> <br>
+        <input type="text" id="2" name="data[]"></input> <br><br>
+        <label> Password: </label> <br>
+        <input type="password" id="3" name="data[]"></input>
+        <br> <br>
+        <label> Project Manager ID: </label> <br>
+        <input type="text" id="5" name="data[]"></input>
+        <br> <br>
+        <input class="btn btn-success" name="submit" type="submit" value="Add team leader">
+    </form>
+</body>
+</html>
