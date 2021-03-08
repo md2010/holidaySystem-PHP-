@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\HolidayRequestEmployee;
+
 class Employee extends BaseModel
 {
     public $attributes = ['username','firstName', 'lastName', 'password', 'teamLeaderID', 'projectManagerID', 'days'];
@@ -31,6 +33,13 @@ class Employee extends BaseModel
             array_push($values, 20);
         } 
         $this->attributes = array_combine($this->attributes,$values);
+    }
+
+    public function getHolidayRequests()
+    {
+        $holiday = new HolidayRequestEmployee();
+        $request = $this->with($holiday);
+        return $request;
     }
 
 }

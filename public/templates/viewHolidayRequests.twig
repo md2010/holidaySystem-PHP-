@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset=utf-8">
+    <title>Twig</title>
+</head>
+<body>
+
+{% for e in data %}
+    <form method="get">
+        <label> Employee ID: </label> <br>
+        <input type="text" id="1" value={{ e.employeeID }} readonly></input> <br><br>
+        <label> First Name: </label> <br>
+        <input type="text" id="2" value={{ e.firstName }} readonly></input> <br><br>
+        <label> Last Name: </label> <br>
+        <input type="text" id="3" value={{ e.lastName }} readonly></input> <br><br>
+        <label> From Date: </label> <br>
+        <input type="date" id="4" value={{ e.fromDate }} readonly></input> <br><br>
+        <label> To Date: </label> <br>
+        <input type="date" id="5" value={{ e.toDate }} readonly></input> <br><br>
+        <label> Days: </label> <br>
+        <input type="text" id="5" value={{ e.days }} readonly></input> <br><br>
+        <label> Status: </label> <br>
+        <input type="text" id="5" value={{ e.status }} readonly></input> <br><br>
+        <label> Project Manager Approval: </label> <br>
+        <input type="text" id="5" value={{ e.projectManagerApproval }} readonly></input> <br><br>
+        <label> Team Leader Approval: </label> <br>
+        <input type="text" id="5" value={{ e.teamLeaderApproval }} readonly></input> <br><br>
+    </form>
+{% endfor %}
+</body>
+</html>

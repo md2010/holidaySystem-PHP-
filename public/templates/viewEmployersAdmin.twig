@@ -7,10 +7,6 @@
 </head>
 <body>
 
-     <form method="get">
-        <input type="submit" formaction="admin" value="Back to admin page"> <br><br>
-     </form>
-
     {% for e in employers %}
         <form method="post">
             <label> ID: </label> <br>
@@ -32,6 +28,7 @@
 
             <input type="submit" formaction="editEmployee" value="Edit Employee"> <br><br>
             <input type="submit" formaction="delete" value="Delete Employee"> <br><br>
+            <input type="submit" formmethod="get" formaction="viewHolidayRequests" value="View Holiday Requests"> <br><br>
             <br><br>
         </form>
     {% endfor %}

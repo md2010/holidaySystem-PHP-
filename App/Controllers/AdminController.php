@@ -49,13 +49,23 @@ class AdminController
         }
     }
 
+    public function viewHolidayRequests()
+    {
+        $id = $_GET["id"];
+        $e = new Employee();
+        $values = $e->getByID($id);
+        $e->create($values);
+        $request = $e->getHolidayRequests();
+        echo Loader::load()->render('viewHolidayRequests.twig', array('data' => $request));
+    }
+
     public function editAdmin()
     {
         $a = new Admin();
         $values = $_POST["data"]; //mora biti istim redom u formi kao u DB !!
         $a->create($values);
         $a->save();
-        header("Location: http://holiday.local/viewAdmins");
+        header("Location: http://holiday.local/admin/viewAdmins");
     }
 
     public function editEmployee()
@@ -65,7 +75,7 @@ class AdminController
                 $_POST["password"],$_POST["teamLeaderID"], $_POST["projectManagerID"],$_POST["days"]);
         $e->create($values);
         $e->save();
-        header("Location: http://holiday.local/viewEmployersAdmin");
+        header("Location: http://holiday.local/admin/viewEmployersAdmin");
     }
 
     public function viewTeamLeaders($id)
@@ -105,7 +115,7 @@ class AdminController
                 $_POST["password"], $_POST["projectManagerID"],$_POST["days"]);
         $tl->create($values);
         $tl->save();
-        header("Location: http://holiday.local/viewTeamLeadersAdmin");
+        header("Location: http://holiday.local/admin/viewTeamLeadersAdmin");
     }
 
     public function addNewAdmin()
@@ -119,7 +129,7 @@ class AdminController
         $admin = new Admin();
         $admin->create($values);
         $admin->save();
-        header("Location: http://holiday.local/admin");
+        header("Location: http://holiday.local/admin/viewAdmins");
     }
 
     public function addNewEmployee()
@@ -133,7 +143,7 @@ class AdminController
         $e = new Employee();
         $e->create($values);
         $e->save();
-        header("Location: http://holiday.local/admin");
+        header("Location: http://holiday.local/admin/viewEmployersAdmin");
     }
 
     public function addNewTeamLeader()
@@ -147,7 +157,7 @@ class AdminController
         $tl = new TeamLeader();
         $tl->create($values);
         $tl->save();
-        header("Location: http://holiday.local/admin");
+        header("Location: http://holiday.local/admin/viewTeamLeadersAdmin");
     }
 
     public function delete()

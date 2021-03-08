@@ -29,7 +29,7 @@ class EmployeeController
         $data = $_POST["data"];
         if(! $data[0]) {
             echo "Invalid request. Employee ID can't be empty!.\n\n";
-            header('Refresh: 2; URL=http://holiday.local/makeHolidayRequest');
+            header('Refresh: 2; URL=http://holiday.local/employee/makeHolidayRequest');
             return;
         } else if($request->create($data)) {
             $request->save();
@@ -38,7 +38,7 @@ class EmployeeController
             echo "Invalid request. You don't have enough days left.\n\n";
         }
         echo "You're being rediracted...";
-        header('Refresh: 2; URL=http://holiday.local/employee?'.$data[0]);
+        header('Refresh: 2; URL=http://holiday.local/employee/'.$data[0]);
     }
 
 }

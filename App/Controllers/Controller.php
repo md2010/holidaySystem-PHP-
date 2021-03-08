@@ -26,8 +26,10 @@ class Controller
         $e->create(array_values($data));
         if (! $e->validateLogIn($password)) {
             echo "Username or password incorrect!";
+        } else if ($user == 'admin') {
+            header("Location: http://holiday.local/".$user.'/');
         } else {
-            header("Location: http://holiday.local/".$user.'?'.$userID);
+            header("Location: http://holiday.local/".$user.'/'.$userID);
         }
     }
 

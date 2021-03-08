@@ -13,27 +13,28 @@ class Routes
         "/validate" => Controller::class.'::validate',
         "/getByID" => Controller::class.'::getByID',
         "/logOut" =>  Controller::class.'::logOut',
-        "/admin" => AdminController::class.'::adminIndex',
-        "/addNewAdmin" =>  AdminController::class.'::addNewAdmin',
-        "/addNewEmployee" =>  AdminController::class.'::addNewEmployee',
-        "/addNewTeamLeader" =>  AdminController::class.'::addNewTeamLeader',
-        "/viewEmployersAdmin" => AdminController::class.'::viewEmployers',
-        "/viewTeamLeadersAdmin" => AdminController::class.'::viewTeamLeaders',
-        "/viewTeamMembersAdmin" => AdminController::class.'::viewTeamMembers',
-        "/viewAdmins" => AdminController::class.'::viewAdmins',
-        "/employee" => EmployeeController::class.'::employeeIndex',
-        "/makeHolidayRequest" => EmployeeController::class.'::makeHolidayRequest'
+        "/admin/" => AdminController::class.'::adminIndex',
+        "/admin/addNewAdmin" =>  AdminController::class.'::addNewAdmin',
+        "/admin/addNewEmployee" =>  AdminController::class.'::addNewEmployee',
+        "/admin/addNewTeamLeader" =>  AdminController::class.'::addNewTeamLeader',
+        "/admin/viewEmployers" => AdminController::class.'::viewEmployers',
+        "/admin/viewHolidayRequests" => AdminController::class.'::viewHolidayRequests',
+        "/admin/viewTeamLeaders" => AdminController::class.'::viewTeamLeaders',
+        "/admin/viewTeamMembers" => AdminController::class.'::viewTeamMembers',
+        "/admin/viewAdmins" => AdminController::class.'::viewAdmins',
+        "/employee/:id" => EmployeeController::class.'::employeeIndex',
+        "/employee/makeHolidayRequest" => EmployeeController::class.'::makeHolidayRequest'
     ]; 
 
     public $post_routes = [
-        "/processNewAdmin" => AdminController::class.'::processNewAdmin',
-        "/processNewEmployee" => AdminController::class.'::processNewEmployee',
-        "/processNewTeamLeader" => AdminController::class.'::processNewTeamLeader',
-        "/editEmployee" => AdminController::class.'::editEmployee',
-        "/delete" => AdminController::class.'::delete',
-        "/editTeamLeader" => AdminController::class.'::editTeamLeader',
-        "/editAdmin" => AdminController::class.'::editAdmin',
-        "/processHolidayRequest" => EmployeeController::class.'::processHolidayRequest'       
+        "/admin/processNewAdmin" => AdminController::class.'::processNewAdmin',
+        "/admin/processNewEmployee" => AdminController::class.'::processNewEmployee',
+        "/admin/processNewTeamLeader" => AdminController::class.'::processNewTeamLeader',
+        "/admin/editEmployee" => AdminController::class.'::editEmployee',
+        "/admin/delete" => AdminController::class.'::delete',
+        "/admin/editTeamLeader" => AdminController::class.'::editTeamLeader',
+        "/admin/editAdmin" => AdminController::class.'::editAdmin',
+        "/employee/processHolidayRequest" => EmployeeController::class.'::processHolidayRequest'       
     ];
 
     /* not supported!
